@@ -1,0 +1,24 @@
+{
+  "name": "mysql-order-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+
+    "database.hostname": "host.docker.internal",
+    "database.port": "3306",
+
+    "database.user": "debezium_cdc",
+    "database.password": "root",
+
+    "database.server.id": "184054",
+
+    "topic.prefix": "dbserver1",
+
+    "database.include.list": "ord_db",
+    "table.include.list": "ord_db.orders",
+
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:29092",
+    "schema.history.internal.kafka.topic": "schemahistory.ord_db",
+
+    "snapshot.mode": "initial"
+  }
+}
